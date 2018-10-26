@@ -1,0 +1,10 @@
+<h1><%= @cocktail.name.capitalize %></h1>
+
+<% @doses.each do |dose| %>
+  <p><%= dose.ingredient.name.capitalize %></p>
+  <p><%= dose.description.capitalize %></p>
+  <%= link_to 'Delete ingredient', dose_path(dose), method: :delete %>
+<% end %>
+<%= link_to 'Add an ingredient and its dose', new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+<%= link_to 'Go Back', cocktails_path, class: "btn btn-primary" %>
+
